@@ -49,4 +49,36 @@ public class Speakers extends Appliance{
     public void setCordLength(int cordLength) {
         this.cordLength = cordLength;
     }
+
+    @Override
+    public String toString() {
+        return "Speakers{" +
+                "powerConsumption=" + powerConsumption +
+                ", numberOfSpeakers=" + numberOfSpeakers +
+                ", freqencyRange='" + freqencyRange + '\'' +
+                ", cordLength=" + cordLength +
+                '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        Speakers speakers = (Speakers) o;
+
+        if (powerConsumption != speakers.powerConsumption) return false;
+        if (numberOfSpeakers != speakers.numberOfSpeakers) return false;
+        if (cordLength != speakers.cordLength) return false;
+        return freqencyRange != null ? freqencyRange.equals(speakers.freqencyRange) : speakers.freqencyRange == null;
+    }
+
+    @Override
+    public int hashCode() {
+        int result = powerConsumption;
+        result = 31 * result + numberOfSpeakers;
+        result = 31 * result + (freqencyRange != null ? freqencyRange.hashCode() : 0);
+        result = 31 * result + cordLength;
+        return result;
+    }
 }

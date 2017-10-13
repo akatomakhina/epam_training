@@ -69,4 +69,42 @@ public class VacuumCleaner extends Appliance{
     public void setCleaningWidth(int cleaningWidth) {
         this.cleaningWidth = cleaningWidth;
     }
+
+    @Override
+    public String toString() {
+        return "VacuumCleaner{" +
+                "powerConsumption=" + powerConsumption +
+                ", filterType='" + filterType + '\'' +
+                ", bagType='" + bagType + '\'' +
+                ", wandType='" + wandType + '\'' +
+                ", motorSpeedRegulation=" + motorSpeedRegulation +
+                ", cleaningWidth=" + cleaningWidth +
+                '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        VacuumCleaner that = (VacuumCleaner) o;
+
+        if (powerConsumption != that.powerConsumption) return false;
+        if (motorSpeedRegulation != that.motorSpeedRegulation) return false;
+        if (cleaningWidth != that.cleaningWidth) return false;
+        if (filterType != null ? !filterType.equals(that.filterType) : that.filterType != null) return false;
+        if (bagType != null ? !bagType.equals(that.bagType) : that.bagType != null) return false;
+        return wandType != null ? wandType.equals(that.wandType) : that.wandType == null;
+    }
+
+    @Override
+    public int hashCode() {
+        int result = powerConsumption;
+        result = 31 * result + (filterType != null ? filterType.hashCode() : 0);
+        result = 31 * result + (bagType != null ? bagType.hashCode() : 0);
+        result = 31 * result + (wandType != null ? wandType.hashCode() : 0);
+        result = 31 * result + motorSpeedRegulation;
+        result = 31 * result + cleaningWidth;
+        return result;
+    }
 }

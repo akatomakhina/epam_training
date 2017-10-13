@@ -71,4 +71,46 @@ public class Laptop extends Appliance {
     public void setDisplayInchs(int displayInchs) {
         this.displayInchs = displayInchs;
     }
+
+    @Override
+    public String toString() {
+        return "Laptop{" +
+                "batteryCapacity=" + batteryCapacity +
+                ", os='" + os + '\'' +
+                ", memoryRom=" + memoryRom +
+                ", systemMemory=" + systemMemory +
+                ", cpu=" + cpu +
+                ", displayInchs=" + displayInchs +
+                '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        Laptop laptop = (Laptop) o;
+
+        if (Double.compare(laptop.batteryCapacity, batteryCapacity) != 0) return false;
+        if (memoryRom != laptop.memoryRom) return false;
+        if (systemMemory != laptop.systemMemory) return false;
+        if (Double.compare(laptop.cpu, cpu) != 0) return false;
+        if (displayInchs != laptop.displayInchs) return false;
+        return os != null ? os.equals(laptop.os) : laptop.os == null;
+    }
+
+    @Override
+    public int hashCode() {
+        int result;
+        long temp;
+        temp = Double.doubleToLongBits(batteryCapacity);
+        result = (int) (temp ^ (temp >>> 32));
+        result = 31 * result + (os != null ? os.hashCode() : 0);
+        result = 31 * result + memoryRom;
+        result = 31 * result + systemMemory;
+        temp = Double.doubleToLongBits(cpu);
+        result = 31 * result + (int) (temp ^ (temp >>> 32));
+        result = 31 * result + displayInchs;
+        return result;
+    }
 }

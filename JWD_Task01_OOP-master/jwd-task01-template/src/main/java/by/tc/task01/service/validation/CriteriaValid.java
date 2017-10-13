@@ -1,10 +1,5 @@
 package by.tc.task01.service.validation;
 
-import java.util.regex.Pattern;
-
-/**
- * Created by user on 09.10.2017.
- */
 public class CriteriaValid {
 
     public CriteriaValid() {

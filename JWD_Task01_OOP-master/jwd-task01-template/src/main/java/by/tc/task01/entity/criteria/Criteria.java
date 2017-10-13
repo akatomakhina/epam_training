@@ -25,6 +25,10 @@ public class Criteria<E> {
 		this.applianceType = applianceType;
 	}
 
+	public Object getValue(E searchCriteria){
+		return criteria.get(searchCriteria);
+	}
+
 	public boolean subMap (Map<String, Object> parsedLine){
 		for(Map.Entry<E,Object> pair : criteria.entrySet()){
 				if (parsedLine.equals(parsedLine.get(pair.getKey().toString()).toString()+"="+pair.getValue().toString().trim())){
@@ -32,10 +36,5 @@ public class Criteria<E> {
 				}
 			}
 			return false;
-			/*String first = parsedLine.get(pair.getKey().toString()).toString();
-			String second = pair.getValue().toString();
-			if (!(first.equals(second))){
-				return false;
-			}*/
 	}
 }

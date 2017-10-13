@@ -69,4 +69,45 @@ public class Refrigerator extends Appliance{
     public void setWidth(int width) {
         this.width = width;
     }
+
+    @Override
+    public String toString() {
+        return "Refrigerator{" +
+                "powerConsumption=" + powerConsumption +
+                ", weight=" + weight +
+                ", freezerCapacity=" + freezerCapacity +
+                ", overallCapacity=" + overallCapacity +
+                ", height=" + height +
+                ", width=" + width +
+                '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        Refrigerator that = (Refrigerator) o;
+
+        if (powerConsumption != that.powerConsumption) return false;
+        if (weight != that.weight) return false;
+        if (freezerCapacity != that.freezerCapacity) return false;
+        if (Double.compare(that.overallCapacity, overallCapacity) != 0) return false;
+        if (height != that.height) return false;
+        return width == that.width;
+    }
+
+    @Override
+    public int hashCode() {
+        int result;
+        long temp;
+        result = powerConsumption;
+        result = 31 * result + weight;
+        result = 31 * result + freezerCapacity;
+        temp = Double.doubleToLongBits(overallCapacity);
+        result = 31 * result + (int) (temp ^ (temp >>> 32));
+        result = 31 * result + height;
+        result = 31 * result + width;
+        return result;
+    }
 }

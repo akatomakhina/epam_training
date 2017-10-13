@@ -13,7 +13,7 @@ public class Validator {
 
         Set<E> ovenKey = criteria.getCriteria().keySet();
 
-        if (type.equals("Laptop")) {
+        if (type.contains("Laptop")) {
             for (Object keys : ovenKey) {
                 if (keys.equals(SearchCriteria.Laptop.BATTERY_CAPACITY) && !(CriteriaValid.isDoubleValid(ovenKey))) {
                     return false;
@@ -36,7 +36,7 @@ public class Validator {
             }
         }
 
-        if (type.equals("Oven")) {
+        if (type.contains("Oven")) {
             for (Object keys : ovenKey) {
                 if (keys.equals(SearchCriteria.Oven.POWER_CONSUMPTION) && !(CriteriaValid.isIntValid(ovenKey))) {
                     return false;
@@ -59,7 +59,7 @@ public class Validator {
             }
         }
 
-        if (type.equals("Refrigerator")) {
+        if (type.contains("Refrigerator")) {
             for (Object keys : ovenKey) {
                 if (keys.equals(SearchCriteria.Refrigerator.POWER_CONSUMPTION) && !(CriteriaValid.isIntValid(ovenKey))) {
                     return false;
@@ -82,7 +82,7 @@ public class Validator {
             }
         }
 
-        if (type.equals("Speakers")) {
+        if (type.contains("Speakers")) {
             for (Object keys : ovenKey) {
                 if (keys.equals(SearchCriteria.Speakers.POWER_CONSUMPTION) && !(CriteriaValid.isIntValid(ovenKey))) {
                     return false;
@@ -99,7 +99,7 @@ public class Validator {
             }
         }
 
-        if (type.equals("TabletPC")) {
+        if (type.contains("TabletPC")) {
             for (Object keys : ovenKey) {
                 if (keys.equals(SearchCriteria.TabletPC.BATTERY_CAPACITY) && !(CriteriaValid.isIntValid(ovenKey))) {
                     return false;
@@ -119,7 +119,7 @@ public class Validator {
             }
         }
 
-        if (type.equals("VacuumCleaner")) {
+        if (type.contains("VacuumCleaner")) {
             for (Object keys : ovenKey) {
                 if (keys.equals(SearchCriteria.VacuumCleaner.POWER_CONSUMPTION) && !(CriteriaValid.isIntValid(ovenKey))) {
                     return false;
