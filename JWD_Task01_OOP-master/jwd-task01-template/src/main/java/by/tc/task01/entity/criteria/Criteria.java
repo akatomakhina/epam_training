@@ -30,11 +30,19 @@ public class Criteria<E> {
 	}
 
 	public boolean subMap (Map<String, Object> parsedLine){
-		for(Map.Entry<E,Object> pair : criteria.entrySet()){
+		/*for(Map.Entry<E,Object> pair : criteria.entrySet()){
 				if (parsedLine.equals(parsedLine.get(pair.getKey().toString()).toString()+"="+pair.getValue().toString().trim())){
 					return true;
 				}
 			}
-			return false;
+			return false;*/
+		for(Map.Entry<E,Object> pair : criteria.entrySet()){
+			String first = parsedLine.get(pair.getKey().toString()).toString();
+			String second = pair.getValue().toString();
+			if (!(first.equals(second))){
+				return false;
+			}
+		}
+		return true;
 	}
 }
