@@ -1,0 +1,59 @@
+@font-face {
+    font-family: Roboto Regular;
+    src: url(Roboto-Regular.ttf);
+}
+body{
+	background-color: #939393;
+}
+.wrapper{
+	margin: 0 auto;
+	width: 1280px;
+	font-family: Roboto Regular;
+	background-color: white;
+}
+.container{
+	width: 960px;
+	margin: 0 auto;
+	padding: 25px 0;
+	overflow: hidden;
+}
+.title{
+	font-family: Roboto Regular;
+	font-size: 30px;
+	font-weight: 400;
+	text-align: center;
+	margin: 0 auto;
+	color: #1d1d1d;
+	margin: 70px 0 0 0;
+}
+.free-registration{
+	height: 650px;
+}
+.registration{
+	width: 500px;
+	margin: 0 auto;
+}
+.registration__form{
+	margin: 0 auto;
+	width: 360px;
+  	text-align: center;
+  	padding: 60px 0 0 0;
+}
+.registration__input{
+	padding: 14px 20px;
+  	font-size: 19px;
+  	margin-bottom: 15px;
+  	border: 2px solid #808080;
+  	border-radius: 5px;
+  	height: 50px;
+	width: 240px;
+}
+.registration__button{
+	background: #00A876;
+	height: 50px;
+	width: 205px;
+	color: white;
+	font-size: 18px;
+	border-radius: 10px;
+	border-width: 0;
+}
