@@ -16,7 +16,7 @@
         <div class="container">
             <div class="table">
                 <jsp:useBean id="person" class = "entity.Person" scope="request"/>
-                <table>
+                <table class="inner_table">
                     <tr class="tr_item">
                         <th class="th__item">id</th>
                         <th class="th__item">name</th>
