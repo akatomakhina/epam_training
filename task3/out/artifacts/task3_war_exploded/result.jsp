@@ -15,7 +15,7 @@
     <div class="free-registration">
         <div class="container">
             <div class="table">
-                <jsp:useBean id="person" class = "entity.Person" scope="request"/>
+
                 <table class="inner_table">
                     <tr class="tr_item">
                         <th class="th__item">id</th>
@@ -32,6 +32,12 @@
                         <td class="th__item">${person.email}</td>
                     </tr>
                 </table>
+
+                <div class="link">
+                    <button class="link__button">
+                        <a href="index.jsp" class="button">BACK</a>
+                    </button>
+                </div>
             </div>
         </div>
     </div>
