@@ -15,10 +15,10 @@ public class PersonDAOImpl implements PersonDAO{
         try {
             this.connector = new Connector();
         } catch (SQLException e) {
-            System.out.println("Error");
+            System.out.println("Error sql");
             e.printStackTrace();
         } catch (ClassNotFoundException e) {
-            System.out.println("Error");
+            System.out.println("Error with connection");
             e.printStackTrace();
         }
     }
@@ -50,7 +50,7 @@ public class PersonDAOImpl implements PersonDAO{
             person.setPhone(resultSet.getString(4));
             person.setEmail(resultSet.getString(5));
         }catch (SQLException e){
-            System.out.println("Error");
+            System.out.println("Error in person");
             e.printStackTrace();
         }finally{
             this.closePreparedStatement(preparedStatement);

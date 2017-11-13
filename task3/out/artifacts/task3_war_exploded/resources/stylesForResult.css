@@ -1,0 +1,35 @@
+@font-face {
+    font-family: Roboto Regular;
+    src: url(Roboto-Regular.ttf);
+}
+body{
+	background-color: #939393;
+}
+.tr_item .th__item{
+	border: 2px solid #939393;
+}
+.tr_item {
+	border: 3px solid #939393;
+}
+.wrapper{
+	margin: 0 auto;
+	width: 1280px;
+	font-family: Roboto Regular;
+	background-color: white;
+}
+.container{
+	width: 960px;
+	margin: 0 auto;
+	padding: 70px 0 425px 0;
+	overflow: hidden;
+}
+.table{
+	font-family: Roboto Regular;
+	font-size: 20px;
+	font-weight: 400;
+	text-align: center;
+	margin: 0 auto;
+	color: #1d1d1d;
+	margin: 70px 0 0 0;
+	padding-left: 120px;
+}

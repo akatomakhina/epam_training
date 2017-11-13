@@ -12,7 +12,7 @@ public class Connector {
         try {
             //DriverManager.getDriver("com.mysql.jdbc.Driver");
             Class.forName("com.mysql.jdbc.Driver");
-            connector = DriverManager.getConnection("jdbc:mysql://hostname:3306/task3", "root", "root");
+            connector = DriverManager.getConnection("jdbc:mysql://localhost:3306/data", "root", "root");
         } catch (ClassNotFoundException e) {
             System.out.println("Driver wasn't found");
             e.printStackTrace();
