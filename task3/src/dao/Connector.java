@@ -7,12 +7,14 @@ import java.sql.SQLException;
 
 public class Connector {
     private Connection connector;
+    private String user = "root";
+    private String password = "root";
+    private String connectionUrl = "jdbc:mysql://localhost:3306/data";
 
     public Connector() throws SQLException, ClassNotFoundException {
         try {
-            //DriverManager.getDriver("com.mysql.jdbc.Driver");
             Class.forName("com.mysql.jdbc.Driver");
-            connector = DriverManager.getConnection("jdbc:mysql://localhost:3306/data", "root", "root");
+            connector = DriverManager.getConnection(connectionUrl, user, password);
         } catch (ClassNotFoundException e) {
             System.out.println("Driver wasn't found");
             e.printStackTrace();
@@ -32,18 +34,4 @@ public class Connector {
         throw new SQLException("Connection or PreparedStatement is null");
     }
 
-    public void closePreparedStatement(PreparedStatement preparedStatement) {
-        if (preparedStatement != null) {
-            try {
-                preparedStatement.close();
-            } catch (SQLException e) {
-                System.out.println("Prepared statement is null ");
-                e.printStackTrace();
-            }
-        }
-    }
-
-    public void closeConnection() throws SQLException {
-        connector.close();
-    }
 }

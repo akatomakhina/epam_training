@@ -22,8 +22,8 @@
           <p>Введите имя и фамилию</p>
         </div>
         <div class="registration__form">
-          <input type="text" class="registration__input" name="name" placeholder="Имя"><br>
-          <input type="text" class="registration__input" name="surname" placeholder="Фамилия"><br>
+          <input type="text"  class="registration__input" name="name" placeholder="Имя"><br>
+          <input type="text"  class="registration__input" name="surname" placeholder="Фамилия"><br>
           <button class="registration__button">Отправить запрос</button>
         </div>
       </div>

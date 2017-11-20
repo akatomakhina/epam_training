@@ -9,10 +9,10 @@ import java.sql.SQLException;
 
 public class PersonServiceImpl implements PersonService {
     @Override
-    public Person find(String ... args) throws SQLException {
+    public Person findPerson(String [] args) throws SQLException {
         DAOFactory factory = DAOFactory.getInstance();
         PersonDAO personDAO = factory.getPersonDAO();
-        Person person = personDAO.find(args);
+        Person person = personDAO.findPerson(args);
         return person;
     }
 }

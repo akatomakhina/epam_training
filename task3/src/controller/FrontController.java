@@ -12,9 +12,20 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 public class FrontController extends HttpServlet {
-    public FrontController() {
-        super();
-    }
+    private final String USER_NAME = "name";
+    private final String USER_SURNAME = "surname";
+    private final String PERSON = "person";
+    private final String PAGE = "/result.jsp";
+
+
+    private String[] args = new String[2];
+
+    ServiceFactory serviceFactory = ServiceFactory.getInstance();
+
+    PersonService service = serviceFactory.getPersonService();
+
+    Person person;
+
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -23,22 +34,19 @@ public class FrontController extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        Person person;
 
-        response.setContentType("text/html");
+        String name = request.getParameter(USER_NAME);
+        String surname = request.getParameter(USER_SURNAME);
 
-        String name = request.getParameter("name");
-        String surname = request.getParameter("surname");
-
-        ServiceFactory serviceFactory = ServiceFactory.getInstance();
-        PersonService service = serviceFactory.getPersonService();
+        args[0] = name;
+        args[1] = surname;
 
         try {
-            person = service.find(name, surname);
-            request.setAttribute("person", person);
-            request.getRequestDispatcher("/result.jsp").forward(request, response);
+            person = service.findPerson(args);
+            request.setAttribute(PERSON, person);
+            request.getRequestDispatcher(PAGE).forward(request, response);
         } catch (SQLException e) {
-            System.out.println("Error");
+            System.out.println("Error in forward");
             e.printStackTrace();
         }
     }

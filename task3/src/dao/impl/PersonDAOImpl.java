@@ -9,6 +9,12 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 public class PersonDAOImpl implements PersonDAO{
+    private final String ID = "id";
+    private final String USER_NAME = "name";
+    private final String USER_SURNAME = "surname";
+    private final String PHONE_NUMBER = "number";
+    private final String EMAIL = "email";
+
     private Connector connector;
 
     public PersonDAOImpl() {
@@ -23,42 +29,30 @@ public class PersonDAOImpl implements PersonDAO{
         }
     }
 
-    public PersonDAOImpl(Connector connector){
-        this.connector = connector;
-    }
-
-    public void close() throws SQLException {
-        connector.closeConnection();
-    }
-
     @Override
-    public Person find(String ... args) throws SQLException {
-        PreparedStatement preparedStatement = null;
+    public Person findPerson(String [] args) throws SQLException {
+        PreparedStatement preparedStatement;
         Person person = null;
         try {
             preparedStatement = connector.getPreparedStatement();
+
             preparedStatement.setString(1, args[0]);
             preparedStatement.setString(2, args[1]);
-            ResultSet resultSet = preparedStatement.executeQuery();
+
+            ResultSet result = preparedStatement.executeQuery();
 
             person = new Person();
 
-            resultSet.next();
-            person.setId(resultSet.getInt(1));
-            person.setName(resultSet.getString(2));
-            person.setSurname(resultSet.getString(3));
-            person.setPhone(resultSet.getString(4));
-            person.setEmail(resultSet.getString(5));
+            result.next();
+            person.setId(result.getInt(ID));
+            person.setName(result.getString(USER_NAME));
+            person.setSurname(result.getString(USER_SURNAME));
+            person.setPhone(result.getString(PHONE_NUMBER));
+            person.setEmail(result.getString(EMAIL));
         }catch (SQLException e){
             System.out.println("Error in person");
             e.printStackTrace();
-        }finally{
-            this.closePreparedStatement(preparedStatement);
         }
         return person;
-    }
-
-    private void closePreparedStatement(PreparedStatement preparedStatement) {
-        connector.closePreparedStatement(preparedStatement);
     }
 }
