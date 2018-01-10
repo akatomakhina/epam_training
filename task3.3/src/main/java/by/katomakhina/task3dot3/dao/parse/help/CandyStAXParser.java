@@ -2,6 +2,8 @@ package by.katomakhina.task3dot3.dao.parse.help;
 
 import by.katomakhina.task3dot3.dao.parse.help.util.Transformator;
 import by.katomakhina.task3dot3.entity.Candy;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import javax.xml.stream.XMLStreamConstants;
 import javax.xml.stream.XMLStreamException;
@@ -11,10 +13,13 @@ import java.util.List;
 
 public class CandyStAXParser {
 
+    private static final Logger Logger = LogManager.getLogger(CandyStAXParser.class);
+
     private CandyStAXParser() {
     }
 
     public static List<Candy> parse(XMLStreamReader reader) throws XMLStreamException {
+        Logger.info("Start parse StAX");
         List<Candy> candies = new ArrayList<>();
         Candy candy = null;
         Candy.Ingredients ingredients = null;
@@ -98,6 +103,7 @@ public class CandyStAXParser {
                     }
             }
         }
+        Logger.info("End parse StAX");
         return candies;
     }
 }

@@ -8,6 +8,8 @@ import by.katomakhina.task3dot3.entity.Candy;
 import by.katomakhina.task3dot3.service.CandyService;
 import by.katomakhina.task3dot3.service.ServiceFactory;
 import by.katomakhina.task3dot3.service.exception.ServiceException;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -17,6 +19,8 @@ import java.io.IOException;
 import java.util.List;
 
 public class FrontController extends HttpServlet {
+
+    private static final Logger Logger = LogManager.getLogger(FrontController.class);
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -49,7 +53,7 @@ public class FrontController extends HttpServlet {
                     req.getRequestDispatcher("WEB-INF/error.jsp").forward(req, resp);
                 }
             } catch (ServiceException e) {
-
+                Logger.error(e);
             }
         } else {
             req.getRequestDispatcher("WEB-INF/error.jsp").forward(req, resp);

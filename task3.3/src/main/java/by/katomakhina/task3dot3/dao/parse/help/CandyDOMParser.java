@@ -2,6 +2,8 @@ package by.katomakhina.task3dot3.dao.parse.help;
 
 import by.katomakhina.task3dot3.entity.Candy;
 import com.sun.org.apache.xerces.internal.parsers.DOMParser;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.NodeList;
@@ -15,15 +17,23 @@ import java.util.List;
 import static by.katomakhina.task3dot3.dao.parse.help.MenuTagName.*;
 
 public class CandyDOMParser {
+
+    private static final Logger Logger = LogManager.getLogger(CandyDOMParser.class);
+
     public CandyDOMParser() {
     }
+
     public static List<Candy> doParsing(String path) throws IOException, SAXException {
         DOMParser parser = new DOMParser();
         parser.parse(new InputSource(CandyDOMParser.class.getResourceAsStream(path)));
 
+        Logger.info("Start parse DOM");
+
         Document document = parser.getDocument();
         Element root = document.getDocumentElement();
         NodeList candyNodes = root.getElementsByTagName(CANDY.getTagName());
+
+        Logger.info("End parse DOM");
 
         return getCandies(candyNodes);
     }

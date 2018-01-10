@@ -3,6 +3,8 @@ package by.katomakhina.task3dot3.dao.parse.help;
 import by.katomakhina.task3dot3.dao.parse.help.constant.TagAttributeConstants;
 import by.katomakhina.task3dot3.dao.parse.help.util.Transformator;
 import by.katomakhina.task3dot3.entity.Candy;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.xml.sax.Attributes;
 import org.xml.sax.SAXException;
 import org.xml.sax.SAXParseException;
@@ -15,8 +17,7 @@ import static by.katomakhina.task3dot3.dao.parse.help.MenuTagName.*;
 
 public class CandySAXParser extends DefaultHandler {
 
-    public CandySAXParser() {
-    }
+    private static final Logger Logger = LogManager.getLogger(CandySAXParser.class);
 
     private List<Candy> candies = new ArrayList<>();
     private Candy candy;
@@ -24,18 +25,21 @@ public class CandySAXParser extends DefaultHandler {
     private Candy.Ingredients ingredients;
     private Candy.Value value;
 
+    public CandySAXParser() {
+    }
+
     public List<Candy> getCandies() {
         return candies;
     }
 
     @Override
     public void startDocument() throws SAXException {
-        super.startDocument();
+        Logger.info("start parse SAX");
     }
 
     @Override
     public void endDocument() throws SAXException {
-        super.endDocument();
+        Logger.info("end parse SAX");
     }
 
     @Override
@@ -112,16 +116,16 @@ public class CandySAXParser extends DefaultHandler {
 
     @Override
     public void error(SAXParseException e) throws SAXException {
-        super.error(e);
+        Logger.error(e);
     }
 
     @Override
     public void fatalError(SAXParseException e) throws SAXException {
-        super.fatalError(e);
+        Logger.fatal(e);
     }
 
     @Override
     public void warning(SAXParseException e) throws SAXException {
-        super.warning(e);
+        Logger.warn(e);
     }
 }

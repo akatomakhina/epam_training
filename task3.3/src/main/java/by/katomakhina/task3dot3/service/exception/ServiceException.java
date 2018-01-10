@@ -1,6 +1,8 @@
 package by.katomakhina.task3dot3.service.exception;
 
 public class ServiceException extends Exception {
+    private static final long serialVersionUID = 5217602107575191266L;
+
     public ServiceException() {
     }
 
