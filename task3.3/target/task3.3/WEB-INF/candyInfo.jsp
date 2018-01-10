@@ -1,47 +1,52 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-
+<style>
+    <%@ include file="/style/style.css" %>
+    <%@ include file="/style/reset.css" %>
+</style>
 <html>
 <head>
     <title>candies</title>
     <meta http-equiv="Content-type" content="text/html" charset="UTF-8">
 </head>
 <body>
-<a href="../index.jsp"><h2>back</h2></a>
-<table border="1" style="width: 64%; margin-left: 18%; margin-top: 100px;">
-    <tr>
-        <th>№</th>
-        <th>type</th>
-
-        <th>name</th>
-        <th>energy</th>
-        <th>water</th>
-        <th>sugar</th>
-        <th>fructose</th>
-        <th>type_of_chocolate</th>
-        <th>vanillin</th>
-        <th>proteins</th>
-        <th>fats</th>
-        <th>carbohydrates</th>
-        <th>production</th>
-    </tr>
-    <c:forEach var="candy" items="${requestScope.candyList}">
+<button class="back__btn"><a href="../index.jsp">back</a></button>
+<div class="table">
+    <table class="table">
         <tr>
-            <td>${candy.id}</td>
-            <td>${candy.type}</td>
-            <td>${candy.name}</td>
-            <td>${candy.energy}</td>
-            <td>${candy.ingredients.water}</td>
-            <td>${candy.ingredients.sugar}</td>
-            <td>${candy.ingredients.fructose}</td>
-            <td>${candy.ingredients.type_of_chocolate}</td>
-            <td>${candy.ingredients.vanillin}</td>
-            <td>${candy.value.proteins}</td>
-            <td>${candy.value.fats}</td>
-            <td>${candy.value.carbohydrates}</td>
-            <td>${candy.production}</td>
+            <th>№</th>
+            <th>type</th>
+
+            <th>name</th>
+            <th>energy</th>
+            <th>water</th>
+            <th>sugar</th>
+            <th>fructose</th>
+            <th>type_of_chocolate</th>
+            <th>vanillin</th>
+            <th>proteins</th>
+            <th>fats</th>
+            <th>carbohydrates</th>
+            <th>production</th>
         </tr>
-    </c:forEach>
-</table>
+        <c:forEach var="candy" items="${requestScope.candyList}">
+            <tr>
+                <td>${candy.id}</td>
+                <td>${candy.type}</td>
+                <td>${candy.name}</td>
+                <td>${candy.energy}</td>
+                <td>${candy.ingredients.water}</td>
+                <td>${candy.ingredients.sugar}</td>
+                <td>${candy.ingredients.fructose}</td>
+                <td>${candy.ingredients.type_of_chocolate}</td>
+                <td>${candy.ingredients.vanillin}</td>
+                <td>${candy.value.proteins}</td>
+                <td>${candy.value.fats}</td>
+                <td>${candy.value.carbohydrates}</td>
+                <td>${candy.production}</td>
+            </tr>
+        </c:forEach>
+    </table>
+</div>
 
 <div style="margin-left: 45%;">
     <c:if test="${requestScope.currentPage != requestScope.firstPage && requestScope.prevPage != requestScope.firstPage}">

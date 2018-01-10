@@ -1,0 +1,4 @@
+19:27:09.721 [INFO ] - [by.katomakhina.task3dot3.dao.parse.help.CandySAXParser] - start parse SAX
+19:27:09.862 [INFO ] - [by.katomakhina.task3dot3.dao.parse.help.CandySAXParser] - end parse SAX
+19:28:59.212 [INFO ] - [by.katomakhina.task3dot3.dao.parse.help.CandySAXParser] - start parse SAX
+19:28:59.228 [INFO ] - [by.katomakhina.task3dot3.dao.parse.help.CandySAXParser] - end parse SAX

@@ -1,6 +1,6 @@
 package by.epamTrainings.task3dot4.entity;
 
-public interface Queue<E> {
+public interface Deque<E> {
     void addFirst(E object);
     void addLast(E object);
     E removeFirst();

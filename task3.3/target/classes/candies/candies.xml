@@ -23,7 +23,7 @@
 
 
     <candy id="candy2" type="wafer">
-        <name>Mishka</name>
+        <name>Mishka_Na_Polyane</name>
         <energy>485</energy>
         <ingredients>
             <water>99</water>
@@ -57,6 +57,96 @@
             <carbohydrates>246</carbohydrates>
         </value>
         <production>Roshen</production>
+    </candy>
+
+    <candy id="candy4" type="toffee">
+        <name>Zolotoi_Kluchik</name>
+        <energy>342</energy>
+        <ingredients>
+            <water>13</water>
+            <sugar>114</sugar>
+            <fructose>57</fructose>
+            <type_of_chocolate>none</type_of_chocolate>
+            <vanillin>34</vanillin>
+        </ingredients>
+        <value>
+            <proteins>14</proteins>
+            <fats>43</fats>
+            <carbohydrates>301</carbohydrates>
+        </value>
+        <production>Spartak</production>
+    </candy>
+
+    <candy id="candy5" type="lollipop">
+        <name>Barbaris</name>
+        <energy>275</energy>
+        <ingredients>
+            <water>118</water>
+            <sugar>54</sugar>
+            <fructose>73</fructose>
+            <type_of_chocolate>none</type_of_chocolate>
+            <vanillin>18</vanillin>
+        </ingredients>
+        <value>
+            <proteins>21</proteins>
+            <fats>11</fats>
+            <carbohydrates>288</carbohydrates>
+        </value>
+        <production>Spartak</production>
+    </candy>
+
+    <candy id="candy6" type="lollipop">
+        <name>Dushes</name>
+        <energy>268</energy>
+        <ingredients>
+            <water>107</water>
+            <sugar>52</sugar>
+            <fructose>78</fructose>
+            <type_of_chocolate>none</type_of_chocolate>
+            <vanillin>21</vanillin>
+        </ingredients>
+        <value>
+            <proteins>14</proteins>
+            <fats>11</fats>
+            <carbohydrates>301</carbohydrates>
+        </value>
+        <production>Kommunarka</production>
+    </candy>
+
+    <candy id="candy7" type="wafer">
+        <name>Raffaello</name>
+        <energy>601</energy>
+        <ingredients>
+            <water>73</water>
+            <sugar>134</sugar>
+            <fructose>16</fructose>
+            <type_of_chocolate>wite</type_of_chocolate>
+            <vanillin>52</vanillin>
+        </ingredients>
+        <value>
+            <proteins>73</proteins>
+            <fats>245</fats>
+            <carbohydrates>497</carbohydrates>
+        </value>
+        <production>Ferrero</production>
+    </candy>
+
+    <candy id="candy8" type="glazed_candy">
+        <name>Ferrero_Rochen</name>
+        <energy>527</energy>
+        <ingredients>
+            <water>86</water>
+            <sugar>111</sugar>
+            <fructose>23</fructose>
+            <type_of_chocolate>dark</type_of_chocolate>
+            <vanillin>32</vanillin>
+        </ingredients>
+        <value>
+            <proteins>70</proteins>
+            <fats>233</fats>
+            <carbohydrates>497</carbohydrates>
+        </value>
+        <production>Ferrero</production>
     </candy>
 
 </candies>

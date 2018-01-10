@@ -1,5 +1,6 @@
 package by.katomakhina.task3dot3.dao.parse.help;
 
+import by.katomakhina.task3dot3.dao.parse.help.constant.TagAttributeConstants;
 import by.katomakhina.task3dot3.entity.Candy;
 import com.sun.org.apache.xerces.internal.parsers.DOMParser;
 import org.apache.logging.log4j.LogManager;
@@ -40,7 +41,7 @@ public class CandyDOMParser {
 
     private static List<Candy> getCandies(NodeList nodeList) {
         List<Candy> candies = new ArrayList<>();
-        Candy candy;
+        Candy candy = null;
 
         int size = nodeList.getLength();
 
@@ -59,8 +60,8 @@ public class CandyDOMParser {
         Candy.Ingredients ingredients = new Candy.Ingredients();
         Candy.Value value = new Candy.Value();
 
-        candy.setId(candyElement.getAttribute(String.valueOf(ID)));
-        candy.setType(candyElement.getAttribute(String.valueOf(TYPE)));
+        candy.setId(candyElement.getAttribute(TagAttributeConstants.CANDY_ID));
+        candy.setType(candyElement.getAttribute(TagAttributeConstants.TYPE));
 
         candy.setName(getSingleChild(candyElement, NAME.getTagName()).getTextContent().trim());
         candy.setEnergy(getSingleChild(candyElement, ENERGY.getTagName()).getTextContent().trim());

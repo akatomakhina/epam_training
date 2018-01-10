@@ -4,7 +4,7 @@
 
         <RollingFile name="File" fileName="log/log.txt"
                      filePattern="log/$${date:yyyy-MM}/app-%d{yyyy-MM-dd-HH-mm}-%i.txt"><!--файл ротируется раз в минуту-->
-            <PatternLayout>
+            <PatternLayout> <!--Вывод-->
                 <Pattern>%d{HH:mm:ss.SSS} [%-5level] - [%logger{36}] - %msg%n</Pattern>
             </PatternLayout>
             <Policies>
@@ -15,7 +15,7 @@
             <DefaultRolloverStrategy max="4"/> <!--Сколько файлов ротирует -->
 
         </RollingFile>
-        <Console name="Console" target="SYSTEM_OUT">
+        <Console name="Console" target="SYSTEM_OUT"> <!--Вывод-->
             <PatternLayout pattern="[%d{HH:mm:ss.SSS}] - [%-5level] - [%logger{36}] - %msg%n"/>
         </Console>
     </Appenders>

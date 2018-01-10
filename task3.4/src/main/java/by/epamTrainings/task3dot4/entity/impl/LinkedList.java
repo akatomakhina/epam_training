@@ -2,13 +2,13 @@ package by.epamTrainings.task3dot4.entity.impl;
 
 import by.epamTrainings.task3dot4.entity.Iterator;
 import by.epamTrainings.task3dot4.entity.List;
-import by.epamTrainings.task3dot4.entity.Queue;
+import by.epamTrainings.task3dot4.entity.Deque;
 import by.epamTrainings.task3dot4.exception.InvalidIndexException;
 
 import java.util.NoSuchElementException;
 import java.util.Objects;
 
-public class LinkedList<E> implements List<E>, Queue<E> {
+public class LinkedList<E> implements List<E>, Deque<E> {
     private Node<E> first;
     private Node<E> last;
     private int size;

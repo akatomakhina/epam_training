@@ -1,0 +1,13 @@
+20:00:52.604 [INFO ] - [by.katomakhina.task3dot3.dao.parse.help.CandyDOMParser] - Start parse DOM
+20:00:52.635 [INFO ] - [by.katomakhina.task3dot3.dao.parse.help.CandyDOMParser] - End parse DOM
+20:04:46.704 [INFO ] - [by.katomakhina.task3dot3.dao.parse.help.CandyDOMParser] - Start parse DOM
+20:04:46.719 [INFO ] - [by.katomakhina.task3dot3.dao.parse.help.CandyDOMParser] - End parse DOM
+20:09:21.235 [INFO ] - [by.katomakhina.task3dot3.dao.parse.help.CandyDOMParser] - Start parse DOM
+20:09:21.250 [INFO ] - [by.katomakhina.task3dot3.dao.parse.help.CandyDOMParser] - End parse DOM
+20:09:26.973 [INFO ] - [by.katomakhina.task3dot3.dao.parse.help.CandyDOMParser] - Start parse DOM
+20:09:26.988 [INFO ] - [by.katomakhina.task3dot3.dao.parse.help.CandyDOMParser] - End parse DOM
+20:15:04.683 [INFO ] - [by.katomakhina.task3dot3.dao.parse.help.CandyDOMParser] - Start parse DOM
+20:16:11.651 [INFO ] - [by.katomakhina.task3dot3.dao.parse.help.CandyDOMParser] - Start parse DOM
+20:16:17.096 [INFO ] - [by.katomakhina.task3dot3.dao.parse.help.CandyDOMParser] - End parse DOM
+20:18:26.729 [INFO ] - [by.katomakhina.task3dot3.dao.parse.help.CandyDOMParser] - Start parse DOM
+20:18:30.855 [INFO ] - [by.katomakhina.task3dot3.dao.parse.help.CandyDOMParser] - End parse DOM

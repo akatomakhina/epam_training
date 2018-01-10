@@ -30,6 +30,5 @@ public class SAXParserTest {
         List<Candy> allCandies = instance.getCandyService().parse("SAX");
         List<Candy> actual = allCandies.subList(0, 2);
         Assert.assertArrayEquals(expected.toArray(), actual.toArray());
-
     }
 }
