@@ -1,6 +1,8 @@
 package by.epamTrainings.task3dot4.exception;
 
 public class InvalidIndexException extends RuntimeException {
+    private static final long serialVersionUID = -4431120445120240333L;
+
     public InvalidIndexException() {
     }
 
