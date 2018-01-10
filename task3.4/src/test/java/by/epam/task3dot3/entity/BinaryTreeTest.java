@@ -1,4 +1,4 @@
-package entity;
+package by.epam.task3dot3.entity;
 
 import by.epamTrainings.task3dot4.entity.impl.BinaryTree;
 import by.epamTrainings.task3dot4.entity.Tree;

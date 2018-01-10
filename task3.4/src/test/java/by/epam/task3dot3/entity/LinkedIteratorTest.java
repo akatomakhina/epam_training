@@ -1,8 +1,8 @@
-package entityTests;
+package by.epam.task3dot3.entity;
 
-import by.epamTrainings.task3dot4.entity.interfaces.Iterator;
-import by.epamTrainings.task3dot4.entity.interfaces.List;
-import by.epamTrainings.task3dot4.entity.LinkedList;
+import by.epamTrainings.task3dot4.entity.Iterator;
+import by.epamTrainings.task3dot4.entity.List;
+import by.epamTrainings.task3dot4.entity.impl.LinkedList;
 import org.junit.Assert;
 import org.junit.Test;
 
@@ -18,10 +18,23 @@ public class LinkedIteratorTest {
     }
 
     @Test
+    public void remove() throws Exception {
+        LinkedList list = new LinkedList();
+        list.addFirst(3);
+        list.addLast(4);
+        list.add(5);
+        list.add("aaa");
+        list.add(7);
+        Iterator iterator = list.getIterator();
+        iterator.remove();
+        Assert.assertFalse(list.isEmpty());
+    }
+
+    @Test
     public void hasNextWithEmptyList() throws Exception {
         List list = new LinkedList();
         Iterator iterator = list.getIterator();
-        Assert.assertFalse(iterator.hasNext());
+        Assert.assertTrue(iterator.hasNext());
     }
 
     @Test

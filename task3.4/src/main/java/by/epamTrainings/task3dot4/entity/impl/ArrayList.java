@@ -4,7 +4,9 @@ import by.epamTrainings.task3dot4.entity.List;
 import by.epamTrainings.task3dot4.exception.InvalidIndexException;
 import by.epamTrainings.task3dot4.entity.Iterator;
 
+import java.util.Arrays;
 import java.util.NoSuchElementException;
+import java.util.Objects;
 
 public class ArrayList<E> implements List<E> {
     private static final int DEFAULT_SIZE = 10;
@@ -42,10 +44,9 @@ public class ArrayList<E> implements List<E> {
 
     @Override
     public E get(int index) {
-        if(isValidIndex(index)) {
+        if (isValidIndex(index)) {
             return values[index];
-        }
-        else throw new InvalidIndexException("Index: " + index + ", Size: " + size);
+        } else throw new InvalidIndexException("Index: " + index + ", Size: " + size);
     }
 
     @Override
@@ -152,5 +153,37 @@ public class ArrayList<E> implements List<E> {
             values[--size] = null;
             index--;
         }
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        ArrayList<?> arrayList = (ArrayList<?>) o;
+        return size == arrayList.size &&
+                Arrays.equals(values, arrayList.values);
+    }
+
+    @Override
+    public int hashCode() {
+
+        int result = Objects.hash(size);
+        result = 31 * result + Arrays.hashCode(values);
+        return result;
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder result = new StringBuilder("[");
+
+        if (size > 0) {
+            for (int i = 0; i < size - 1; ++i) {
+                result.append(values[i]).append(", ");
+            }
+            result.append(values[size - 1]);
+        }
+
+        result.append("]");
+        return result.toString();
     }
 }
