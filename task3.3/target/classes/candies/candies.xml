@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<candies>
+
+    <candy id="candy1" type="wafer">
+        <name>Alenka</name>
+        <energy>530</energy>
+        <ingredients>
+            <water>86</water>
+            <sugar>15</sugar>
+            <fructose>10</fructose>
+            <type_of_chocolate>milk</type_of_chocolate>
+            <vanillin>10</vanillin>
+        </ingredients>
+        <value>
+            <proteins>96</proteins>
+            <fats>45</fats>
+            <carbohydrates>7</carbohydrates>
+        </value>
+        <production>Kommunarka</production>
+    </candy>
+
+
+    <candy id="candy2" type="wafer">
+        <name>Mishka</name>
+        <energy>485</energy>
+        <ingredients>
+            <water>99</water>
+            <sugar>45</sugar>
+            <fructose>12</fructose>
+            <type_of_chocolate>milk</type_of_chocolate>
+            <vanillin>10</vanillin>
+        </ingredients>
+        <value>
+            <proteins>96</proteins>
+            <fats>52</fats>
+            <carbohydrates>537</carbohydrates>
+        </value>
+        <production>Kommunarka</production>
+    </candy>
+
+
+    <candy id="candy3" type="glazed_candy">
+        <name>Shokoladnie_Lapki</name>
+        <energy>493</energy>
+        <ingredients>
+            <water>96</water>
+            <sugar>76</sugar>
+            <fructose>7</fructose>
+            <type_of_chocolate>dark</type_of_chocolate>
+            <vanillin>10</vanillin>
+        </ingredients>
+        <value>
+            <proteins>96</proteins>
+            <fats>113</fats>
+            <carbohydrates>246</carbohydrates>
+        </value>
+        <production>Roshen</production>
+    </candy>
+
+</candies>

@@ -1,0 +1,87 @@
+<shema>
+    <element name="candies">
+        <complexType>
+            <sequence>
+                <element name="candy" type="tns:Candy" minOccurs="1" maxOccurs="unbounded"/>
+            </sequence>
+        </complexType>
+    </element>
+
+    <complexType name="Candy">
+        <sequence>
+            <element name="name" type="string"/>
+            <element name="energy">
+                <simpleType>
+                    <restriction base="string">
+                        <pattern value="[1-9][0-9]+"/>
+                    </restriction>
+                </simpleType>
+            </element>
+            <element name="ingredients" type="tns:Ingredients"/>
+            <element name="value" type="tns:Value"/>
+            <element name="production" type="string"/>
+        </sequence>
+        <attribute name="id" type="ID" use="required"/>
+        <attribute name="type" type="string" use="optional"/>
+    </complexType>
+
+    <complexType name="Ingredients">
+        <sequence>
+            <element name="water">
+                <simpleType>
+                    <restriction base="string">
+                        <pattern value="[1-9][0-9]+"/>
+                    </restriction>
+                </simpleType>
+            </element>
+            <element name="sugar">
+                <simpleType>
+                    <restriction base="string">
+                        <pattern value="[1-9][0-9]+"/>
+                    </restriction>
+                </simpleType>
+            </element>
+            <element name="fructose">
+                <simpleType>
+                    <restriction base="string">
+                        <pattern value="[1-9][0-9]+"/>
+                    </restriction>
+                </simpleType>
+            </element>
+            <element name="type_of_chocolate" type="string"/>
+            <element name="vanillin">
+                <simpleType>
+                    <restriction base="string">
+                        <pattern value="[1-9][0-9]+"/>
+                    </restriction>
+                </simpleType>
+            </element>
+        </sequence>
+    </complexType>
+
+    <complexType name="Value">
+        <sequence>
+            <element name="proteins">
+                <simpleType>
+                    <restriction base="string">
+                        <pattern value="[1-9][0-9]+"/>
+                    </restriction>
+                </simpleType>
+            </element>
+            <element name="fats">
+                <simpleType>
+                    <restriction base="string">
+                        <pattern value="[1-9][0-9]+"/>
+                    </restriction>
+                </simpleType>
+            </element>
+            <element name="carbohydrates">
+                <simpleType>
+                    <restriction base="string">
+                        <pattern value="[1-9][0-9]+"/>
+                    </restriction>
+                </simpleType>
+            </element>
+        </sequence>
+    </complexType>
+</shema>

@@ -1,13 +1,23 @@
 <component name="ArtifactManager">
   <artifact type="exploded-war" name="task3.3:war exploded">
-    <output-path>$PROJECT_DIR$/out/artifacts/task3_3_war_exploded</output-path>
+    <output-path>$PROJECT_DIR$/target/task3.3</output-path>
     <root id="root">
-      <element id="javaee-facet-resources" facet="task3.3/web/Web" />
       <element id="directory" name="WEB-INF">
         <element id="directory" name="classes">
           <element id="module-output" name="task3.3" />
         </element>
+        <element id="directory" name="lib">
+          <element id="library" level="project" name="Maven: org.apache.logging.log4j:log4j-core:2.7" />
+          <element id="library" level="project" name="Maven: org.apache.logging.log4j:log4j-api:2.7" />
+          <element id="library" level="project" name="Maven: jstl:jstl:1.2" />
+          <element id="library" level="project" name="Maven: xerces:xercesImpl:2.11.0" />
+          <element id="library" level="project" name="Maven: xml-apis:xml-apis:1.4.01" />
+        </element>
       </element>
+      <element id="directory" name="META-INF">
+        <element id="file-copy" path="$PROJECT_DIR$/target/task3.3/META-INF/MANIFEST.MF" />
+      </element>
+      <element id="javaee-facet-resources" facet="task3.3/web/Web" />
     </root>
   </artifact>
 </component>
